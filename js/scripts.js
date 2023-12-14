@@ -8,8 +8,9 @@ const pokemonList = [
 
 let cards = document.getElementById("cards");
 
-// This is a for loop that iterates over each item in pokemonList.
+// This is a function that takes a list and iterates over each item in pokemonList.
 // It writes the name and height of each pokemon to the browser window.
+//It also adds classNames to the divs that are created in order to style them.
 // For pokemon greater than or equal to 0.7 in height, it adds the text "Wow, that's big!".
 
 const pokemonPrinter = (pokemonList) => {
