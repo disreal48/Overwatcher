@@ -8,6 +8,26 @@ let pokemonRepository = (function () {
     { name: "Squirtle", height: 0.5, types: ["water"] },
     { name: "Pikachu", height: 0.4, types: ["electric"] },
     { name: "Eevee", height: 0.3, types: ["normal"] },
+    { name: "Mew", height: 0.4, types: ["psychic"] },
+    { name: "Mewtwo", height: 2, types: ["psychic"] },
+    { name: "Gengar", height: 1.5, types: ["ghost", "poison"] },
+    { name: "Gyarados", height: 6.5, types: ["water", "flying"] },
+    { name: "Golem", height: 1.4, types: ["rock", "ground"] },
+    { name: "Machamp", height: 1.6, types: ["fighting"] },
+    { name: "Moltres", height: 2, types: ["fire", "flying"] },
+    { name: "Zapdos", height: 1.6, types: ["electric", "flying"] },
+    { name: "Articuno", height: 1.7, types: ["ice", "flying"] },
+    { name: "Dragonite", height: 2.2, types: ["dragon", "flying"] },
+    { name: "Garchomp", height: 1.9, types: ["dragon", "ground"] },
+    { name: "Greninja", height: 1.5, types: ["water", "dark"] },
+    { name: "Charizard", height: 1.7, types: ["fire", "flying"] },
+    { name: "Venusaur", height: 2, types: ["grass", "poison"] },
+    { name: "Blastoise", height: 1.6, types: ["water"] },
+    { name: "Lapras", height: 2.5, types: ["water", "ice"] },
+    { name: "Snorlax", height: 2.1, types: ["normal"] },
+    { name: "Gardevoir", height: 1.6, types: ["psychic", "fairy"] },
+    { name: "Lucario", height: 1.2, types: ["fighting", "steel"] },
+    { name: "Gallade", height: 1.6, types: ["psychic", "fighting"] }
   ];
 
   function add(pokemon) {
@@ -33,10 +53,21 @@ let pokemonRepository = (function () {
     return pokemonList.filter((pokemon) => pokemon.name === pokemonName);
   }
 
+  function addListItem(pokemon) {
+    let pokemonList = document.getElementById("pokemonList");
+    let listItem = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("pokemonButton");
+    listItem.appendChild(button);
+    pokemonList.appendChild(listItem);
+  }
+
   return {
     add: add,
     getAll: getAll,
     findPokemon: findPokemon,
+    addListItem: addListItem,
   };
 })();
 
@@ -44,27 +75,7 @@ let pokemonRepository = (function () {
 // It writes the name and height of each pokemon to the browser window.
 //It also adds classNames to the divs that are created in order to style them.
 // For pokemon greater than or equal to 0.7 in height, it adds the text "Wow, that's big!".
-const pokemonPrinter = (pokemonList) => {
-  pokemonList.forEach(function (pokemon) {
-    let cards = document.getElementById("cards");
-    let newDiv = document.createElement("div");
-    let cardContent = "";
 
-    newDiv.classList.add("card");
-
-    if (pokemon.height >= 0.7) {
-      cardContent = document.createTextNode(
-        `${pokemon.name} (height: ${pokemon.height}) - Wow, that's big!`
-      );
-    } else {
-      cardContent = document.createTextNode(
-        `${pokemon.name} (height: ${pokemon.height})`
-      );
-    }
-
-    newDiv.appendChild(cardContent);
-    document.getElementById("cards").appendChild(newDiv);
-  });
-};
-
-pokemonPrinter(pokemonRepository.getAll());
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
