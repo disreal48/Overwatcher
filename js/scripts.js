@@ -1,6 +1,8 @@
 // This is an IIFE (Immediately Invoked Function Expression) that contains an array of pokemon objects.
 // Each pokemon object has a name, height, and types property.
 // You can add, list and find pokemon using the pokemonRepository returned object.
+// The Function also adds the pokemon of the list to the DOM.
+// The Function also adds a click event listener to each pokemon button that logs the pokemon object to the console.
 let pokemonRepository = (function () {
   let pokemonList = [
     { name: "Bulbasaur", height: 0.7, types: ["grass", "poison"] },
@@ -27,7 +29,7 @@ let pokemonRepository = (function () {
     { name: "Snorlax", height: 2.1, types: ["normal"] },
     { name: "Gardevoir", height: 1.6, types: ["psychic", "fairy"] },
     { name: "Lucario", height: 1.2, types: ["fighting", "steel"] },
-    { name: "Gallade", height: 1.6, types: ["psychic", "fighting"] }
+    { name: "Gallade", height: 1.6, types: ["psychic", "fighting"] },
   ];
 
   function add(pokemon) {
@@ -61,6 +63,17 @@ let pokemonRepository = (function () {
     button.classList.add("pokemonButton");
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
+    addEventListener(button, pokemon);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+  function addEventListener(button, pokemon) {
+    button.addEventListener("click", function () {
+      showDetails(pokemon);
+    });
   }
 
   return {
