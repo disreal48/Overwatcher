@@ -1,5 +1,6 @@
 The purpose of this App is to quickly be able to look up Pokemon.
-When you click on a pokemon you get additional details.
+<br>
+When you click on a pokemon you get additional details displayed in a modal.
 
 The app is run in the browser.
 
