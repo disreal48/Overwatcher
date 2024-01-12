@@ -7,3 +7,5 @@ The app is run in the browser.
 It uses ES6-features, so your browser has to support that.
 
 The App uses the PokeAPI.
+
+It is designed using Bootstrap.
