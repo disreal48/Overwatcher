@@ -76,10 +76,15 @@ let pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("btn", "btn-primary", "btn-block");
+    button.classList.add("text-capitalize");
+    button.classList.add("text-center");
+    button.classList.add("text-monospace");
     button.setAttribute("data-toggle", "modal");
     button.setAttribute("data-target", "#modal-container");
     button.setAttribute("type", "button");
     button.setAttribute("id", pokemon.name);
+    button.setAttribute("aria-label", "Button to show the details of " + pokemon.name);
+    button.setAttribute("aria-describedby", "modal-container");    
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
     addEventListener(button, pokemon);
@@ -101,14 +106,31 @@ let pokemonRepository = (function () {
     modalTitle.innerHTML = "";
 
     let nameElement = document.createElement("h1");
+    nameElement.classList.add("text-capitalize");
+    nameElement.classList.add("text-center");
+    nameElement.classList.add("text-primary");
+    nameElement.classList.add("text-monospace");
+    nameElement.setAttribute("id", "modal-title");
+    nameElement.setAttribute("aria-label", "Name of the Pokemon");
     nameElement.innerText = name;
 
     let heightElement = document.createElement("p");
-    heightElement.innerText = "Height: " + height;
+    heightElement.innerText = "Height: " + height + "m";
+    heightElement.classList.add("text-capitalize");
+    heightElement.classList.add("text-center");
+    heightElement.classList.add("text-primary");
+    heightElement.classList.add("text-monospace");
+    heightElement.setAttribute("id", "modal-body");
+    heightElement.setAttribute("aria-label", "Height of the Pokemon");
 
     let imageElement = document.createElement("img");
     imageElement.setAttribute("src", image);
     imageElement.setAttribute("alt", "Image of " + name);
+    imageElement.classList.add("img-fluid");
+    imageElement.classList.add("mx-auto");
+    imageElement.classList.add("d-block");
+    imageElement.setAttribute("id", "modal-image");
+    imageElement.setAttribute("aria-label", "Image of the Pokemon");
 
     modalTitle.appendChild(nameElement);
     modalBody.appendChild(imageElement);
