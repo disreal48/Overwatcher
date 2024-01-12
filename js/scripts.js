@@ -83,8 +83,11 @@ let pokemonRepository = (function () {
     button.setAttribute("data-target", "#modal-container");
     button.setAttribute("type", "button");
     button.setAttribute("id", pokemon.name);
-    button.setAttribute("aria-label", "Button to show the details of " + pokemon.name);
-    button.setAttribute("aria-describedby", "modal-container");    
+    button.setAttribute(
+      "aria-label",
+      "Button to show the details of " + pokemon.name
+    );
+    button.setAttribute("aria-describedby", "modal-container");
     listItem.appendChild(button);
     pokemonList.appendChild(listItem);
     addEventListener(button, pokemon);
@@ -134,7 +137,7 @@ let pokemonRepository = (function () {
 
     modalTitle.appendChild(nameElement);
     modalBody.appendChild(imageElement);
-    modalBody.appendChild(heightElement);   
+    modalBody.appendChild(heightElement);
   }
 
   // Function to show the details of a pokemon in a modal
