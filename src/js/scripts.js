@@ -53,7 +53,7 @@ let pokemonRepository = (function () {
       pokemonList.push(pokemon);
     } else {
       console.log(
-        'Please add a Pokemon object with the keys "name"(str), "height"(int) and "types"(array of str).'
+        'Please add a Pokemon object with the keys "name"(str), "height"(int) and "types"(array of str).',
       );
     }
   }
@@ -85,7 +85,7 @@ let pokemonRepository = (function () {
     button.setAttribute("id", pokemon.name);
     button.setAttribute(
       "aria-label",
-      "Button to show the details of " + pokemon.name
+      "Button to show the details of " + pokemon.name,
     );
     button.setAttribute("aria-describedby", "modal-container");
     listItem.appendChild(button);
