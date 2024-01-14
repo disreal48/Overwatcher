@@ -2,7 +2,9 @@
     "extends": ["prettier"],
     "plugins": ["prettier"],
     "parser": "@babel/eslint-parser",
-    "requireConfigFile": false,
+    "parserOptions": {
+      "requireConfigFile": false
+    },
     "rules": {
       "prettier/prettier": ["error"]
     }
