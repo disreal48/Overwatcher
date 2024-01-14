@@ -139,9 +139,9 @@ let pokemonRepository = (function () {
     modalBody.appendChild(imageElement);
     modalBody.appendChild(heightElement);
 
-    $(".modal").on("hidden.bs.modal", function(){
+    $(".modal").on("hidden.bs.modal", function () {
       $("#modal-image").html("");
-  });
+    });
   }
 
   // Function to show the details of a pokemon in a modal
