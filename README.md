@@ -9,24 +9,6 @@ PokeyDokey is a web application designed for Pokémon enthusiasts. It allows use
 - **Responsive Design**: Built with Bootstrap, the app is fully responsive and works across different devices and screen sizes.
 - **Modern JavaScript**: Utilizes ES6 features for a clean and efficient codebase.
 
-## Getting Started
-
-To get started with PokeyDokey, follow these simple steps:
-
-1. Clone the repository to your local machine:
-
-```sh
-git clone https://github.com/your-username/pokeydokey.git
-```
-
-2. Navigate to the project directory:
-
-```sh
-cd pokeydokey
-```
-
-3. Open the index.html file in your browser to launch the app.
-
 ## Dependencies
 
 PokeyDokey relies on the following external libraries and resources:
