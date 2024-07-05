@@ -24,28 +24,10 @@ To install and run PokeyDokey locally, follow these steps:
 1. Clone the repository to your local machine:
 
 ```sh
-git clone https://github.com/your-username/pokeydokey.git
+git clone https://github.com/disreal48/pokeydokey.git
 ```
 
-2. Navigate to the project directory:
-
-```sh
-cd pokeydokey
-```
-
-3. Install the dependencies:
-
-```sh
-npm install
-```
-
-4. Start the application:
-
-```sh
-npm start
-```
-
-5. Open your browser and visit `http://localhost:3000` to access the app.
+2. Open the index.html File in your Browser
 
 ## Features
 
